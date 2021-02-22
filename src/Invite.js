@@ -51,22 +51,25 @@ const Invite = ({ fromEmail }) => {
                                 <span className="block xl:inline">Chat with {name} on Workdock</span>
                             </h1>
                             <p className="mt-3 text-black sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-2xl lg:mx-0 font-semi">Replace zoom for unscheduled calls</p>
-                            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">You can see teammates, like {name}, as avatars directly on your MacOS dock and start a voice or screen-share with one click.</p>
+                            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">You can see teammates, like {name}, as avatars directly on your MacOS dock and start a voice call or screen-share with one click.</p>
                             {!copied && (
                                 <div className="mt-5 sm:mt-8 sm:justify-center lg:justify-start md:w-auto lg:w-96 invisible md:visible">
                                     <div className="rounded-md shadow">
                                         <div onClick={() => {
-                                            clipboard.copy(`https://workdock.app/?invitedby=fromEmail`);
+                                            clipboard.copy(`https://workdock.app/?invitedby=${fromEmail}`);
                                             setCopied(true);
-                                        }} className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800 md:py-4 md:text-lg md:px-7">
+                                        }} className="cursor-pointer w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800 md:py-4 md:text-lg md:px-7">
                                             <span className="mt-1 ml-5">👍  Accept invite </span>
                                         </div>
                                     </div>
                                 </div>
                             )}
                             {copied && (
+                                <iframe src={`workdock://${fromEmail.replace(/@/g, "__")}`} width="0" height="0"></iframe>
+                            )}
+                            {copied && (
                                 <div>
-                                    <div className="mt-3 font-bold text-base text-black sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">To accept {name}'s invite, download and login</div>
+                                    <div className="mt-3 font-bold text-base text-black sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">To accept {name}'s invite, download and sign in below if you haven't done so already</div>
                                     <div className="mt-5 sm:mt-8 sm:justify-center lg:justify-start md:w-auto lg:w-96 invisible md:visible">
                                         <div className="rounded-md shadow">
                                             <a href={url} className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800 md:py-4 md:text-lg md:px-7">
@@ -75,7 +78,7 @@ const Invite = ({ fromEmail }) => {
                                                 <span className="mt-1 ml-3 text-gray-600">{version}</span>
                                             </a>
                                         </div>
-                                        <div className="invisible md:visible text-gray-400 text-sm sm:mt-3 sm:flex sm:justify-center lg:justify-start">* windows version coming soon</div>
+                                        <a className="mt-3 cursor-pointer text-sm text-gray-500 underline" href={`workdock://${fromEmail.replace(/@/g, "__")}`}>Didn't work? Click here to launch Workdock</a>
                                     </div>
                                 </div>
                             )}
