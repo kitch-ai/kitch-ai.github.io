@@ -43,7 +43,6 @@ const Marketing = () => {
                                     <a href={url} className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800 md:py-4 md:text-lg md:px-7">
                                         <svg className="w-6 h-6 ml-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" /></svg>
                                         <span className="mt-1 ml-5"> Download </span>
-                                        <span className="mt-1 ml-3 text-gray-600"> {version} </span>
                                     </a>
                                 </div>
                                 <div className="invisible md:visible text-gray-400 text-sm sm:mt-3 sm:flex sm:justify-center lg:justify-start">* windows version coming soon</div>
