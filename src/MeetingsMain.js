@@ -82,6 +82,19 @@ const MeetingsMain = () => {
             We care about your privacy. Read our full privacy policy
           </a>
         </div>
+        <div className="mt-3 text-xs text-gray-600 flex justify-center">
+          <span className="text-center">
+            Meetings use of information received from Google APIs will adhere to
+            the{" "}
+            <a
+              className="underline"
+              href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
+            >
+              Google API Services User Data Policy
+            </a>
+            , including the Limited Use requirements.
+          </span>
+        </div>
       </main>
       <div className="flex justify-items-center mt-20">
         <div className="h-full mx-40 visible">
