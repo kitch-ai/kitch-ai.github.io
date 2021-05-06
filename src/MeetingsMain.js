@@ -77,6 +77,11 @@ const MeetingsMain = () => {
           Meetings is built by Workdock | 2261 Market Street #4205, San
           Francisco, CA 94114
         </div>
+        <div className="mt-3 text-xs text-gray-600 flex justify-center underline">
+          <a href="meeting-privacy.html">
+            We care about your privacy. Read our full privacy policy
+          </a>
+        </div>
       </main>
       <div className="flex justify-items-center mt-20">
         <div className="h-full mx-40 visible">
