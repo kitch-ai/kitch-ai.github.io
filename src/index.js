@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./Main";
 import MeetingsMain from "./MeetingsMain";
+import Hiring from "./Hiring";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,6 +12,9 @@ ReactDOM.render(
       <Switch>
         <Route path="/callback">
           <Main />
+        </Route>
+        <Route path="/hiring">
+          <Hiring />
         </Route>
         <Route path="/">
           <MeetingsMain />
