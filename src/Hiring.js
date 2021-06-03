@@ -22,7 +22,7 @@ const Hiring = () => {
           creds : googleData.qc});
     
         const response = await axios
-          .post(`http://localhost:3000/work-connection/work-email`,
+          .post(`https://api.workdock.app/work-connection/work-email`,
             json,{
               headers: { 
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const Hiring = () => {
         const json = JSON.stringify({ 
             email: email});
       
-          axios.post(`http://localhost:3000/work-connection/user`,
+          axios.post(`https://api.workdock.app/work-connection/user`,
               json,{
                 headers: { 
                   'Content-Type': 'application/json'
