@@ -13,6 +13,7 @@ const MeetingsMain = () => {
       .then(function (result) {
         let items = result.items
           .filter((x) => x.name.endsWith(".dmg"))
+          .filter((x) => x.name.startsWith("Meetings-"))
           .sort((a, b) => {
             if (a.name < b.name) {
               return 1;

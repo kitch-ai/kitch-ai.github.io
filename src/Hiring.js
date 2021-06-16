@@ -51,9 +51,11 @@ const Hiring = () => {
           <div className="font-black text-4xl text-center">
             Product Design Role: Workdock
           </div>
+          { !finished && (
           <div className="font-semibold text-2xl text-center mt-4">
             Connect with your work e-mail
           </div>
+          )}
           {finished && (
             <div className="">
               Thanks, we will contact you shortly about the role and to get
@@ -76,7 +78,7 @@ const Hiring = () => {
                     console.log(JSON.stringify(error));
                   }}
                   cookiePolicy={"single_host_origin"}
-                  scope="https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/userinfo.email"
+                  scope="https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/userinfo.email"
                 />
               </div>
               <div className="mt-4 text-xs text-center text-gray-700 w-72 m-auto">
